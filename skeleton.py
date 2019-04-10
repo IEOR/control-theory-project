@@ -58,7 +58,7 @@ def send_test_email():
 
 def send_text(from_number, to_number, body):
 	account_sid = 'ACff26b77b06fd2bd97795b331ef0d8d25'
-	auth_token = '1ce1f179bf49cb4311b69e90bc904f7c'
+	auth_token = os.environ.get('TWILIO_AUTH')
 	client = Client(account_sid, auth_token)
 
 	message = client.messages.create(
